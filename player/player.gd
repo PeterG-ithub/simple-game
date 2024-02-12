@@ -34,3 +34,7 @@ func take_damage(damage):
 	print("%s has taken %s damage" % [self, damage])
 	if health <= 0:
 		queue_free()
+
+
+func _on_attack_speed_timeout():
+	shoot()

@@ -33,3 +33,9 @@ offset_bottom = -29.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_2m1ws")
 texture_progress = ExtResource("3_afrku")
+
+[node name="AttackSpeed" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="AttackSpeed" to="." method="_on_attack_speed_timeout"]
