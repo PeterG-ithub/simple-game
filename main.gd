@@ -8,12 +8,15 @@ var level = 1
 @onready var experience_bar = $UI/ExperienceBar
 @onready var player = $Player
 @onready var ui = $UI
+@onready var enemy_dead_audio = $EnemyDeadAudio
+@onready var player_dead_audio = $PlayerDeadAudio
 
 func _ready():
 	experience_bar.max_value = level_up_exp
 	player.dead.connect(lose)
 
 func enemy_dead():
+	enemy_dead_audio.play()
 	exp += 20.0
 	experience_bar.value = exp
 	if exp >= level_up_exp:
@@ -37,6 +40,7 @@ func winner():
 	get_tree().paused = true
 
 func lose():
+	player_dead_audio.play()
 	const LOSE = preload("res://ui/lose.tscn")
 	ui.add_child(LOSE.instantiate())
 	get_tree().paused = true

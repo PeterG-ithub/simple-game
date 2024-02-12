@@ -10,6 +10,7 @@ var health
 @onready var health_bar = $HealthBar
 @onready var attack_cooldown = $AttackCooldown
 @onready var hitbox = $Hitbox
+@onready var enemy_damage_audio = $EnemyDamageAudio
 
 func _ready():
 	health = MAX_HEALTH
@@ -22,6 +23,7 @@ func _physics_process(delta):
 
 func take_damage(damage):
 	health -= damage
+	enemy_damage_audio.play()
 	health_bar.value = (health / MAX_HEALTH * 100)
 	#print("%s has taken %s damage" % [self, damage])
 	if health <= 0:

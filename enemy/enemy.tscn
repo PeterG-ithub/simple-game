@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://24ttjwqaueoc"]
+[gd_scene load_steps=7 format=3 uid="uid://24ttjwqaueoc"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_byuei"]
 [ext_resource type="Texture2D" uid="uid://c257tfcoqpysc" path="res://ui/hp_under.png" id="2_llp1j"]
 [ext_resource type="Texture2D" uid="uid://cxed56761jiyr" path="res://ui/hp_progress.png" id="3_d11n8"]
+[ext_resource type="AudioStream" uid="uid://c1y8547ue87cx" path="res://audio/enemy_dmg.wav" id="4_028xx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d03"]
 size = Vector2(18, 16)
@@ -45,5 +46,8 @@ shape = SubResource("CapsuleShape2D_f2oer")
 
 [node name="AttackCooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="EnemyDamageAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_028xx")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

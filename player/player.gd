@@ -10,6 +10,8 @@ var damage_stat = 10.0
 
 @onready var shooting_point = $ShootingPoint
 @onready var health_bar = $HealthBar
+@onready var player_shoot_audio = $PlayerShootAudio
+@onready var damage_taken_audio = $DamageTakenAudio
 
 func _ready():
 	health = MAX_HEALTH
@@ -30,11 +32,13 @@ func shoot():
 	projectile.global_position = shooting_point.global_position
 	projectile.global_rotation = shooting_point.global_position.direction_to(get_global_mouse_position()).angle()
 	shooting_point.add_child(projectile)
+	player_shoot_audio.play()
 
 func take_damage(damage):
 	health -= damage
+	damage_taken_audio.play()
 	health_bar.value = (health / MAX_HEALTH * 100)
-	print("%s has taken %s damage" % [self, damage])
+	#print("%s has taken %s damage" % [self, damage])
 	if health <= 0:
 		dead.emit()
 
