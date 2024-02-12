@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://24ttjwqaueoc"]
+[gd_scene load_steps=6 format=3 uid="uid://24ttjwqaueoc"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_byuei"]
 [ext_resource type="Texture2D" uid="uid://c257tfcoqpysc" path="res://ui/hp_under.png" id="2_llp1j"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d03"]
 size = Vector2(18, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f2oer"]
+radius = 3.0
+height = 20.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -30,3 +34,16 @@ offset_bottom = -19.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_llp1j")
 texture_progress = ExtResource("3_hlo3r")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_f2oer")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
