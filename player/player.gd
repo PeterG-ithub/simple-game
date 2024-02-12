@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal dead
+
 const PROJECTILE = preload("res://projectile/projectile.tscn")
 const MAX_HEALTH = 100.0
 
@@ -34,7 +36,7 @@ func take_damage(damage):
 	health_bar.value = (health / MAX_HEALTH * 100)
 	print("%s has taken %s damage" % [self, damage])
 	if health <= 0:
-		queue_free()
+		dead.emit()
 
 
 func _on_attack_speed_timeout():
