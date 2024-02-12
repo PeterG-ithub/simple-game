@@ -32,6 +32,13 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_xdj0i")
 texture_progress = ExtResource("5_jah24")
 
+[node name="LevelLabel" type="Label" parent="UI/ExperienceBar"]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 58.0
+offset_bottom = 24.0
+text = "Lv.1"
+
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("6_1nd8f")
 
