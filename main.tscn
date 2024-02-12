@@ -8,8 +8,8 @@
 
 [node name="Level" parent="." instance=ExtResource("1_eum1e")]
 
-[node name="Player" parent="." instance=ExtResource("2_5mmrx")]
-position = Vector2(217, 143)
-
 [node name="Enemy" parent="." instance=ExtResource("2_v0rym")]
 position = Vector2(393, 146)
+
+[node name="Player" parent="." instance=ExtResource("2_5mmrx")]
+position = Vector2(217, 143)
