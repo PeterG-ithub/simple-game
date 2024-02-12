@@ -23,7 +23,7 @@ func _physics_process(delta):
 func take_damage(damage):
 	health -= damage
 	health_bar.value = (health / MAX_HEALTH * 100)
-	print("%s has taken %s damage" % [self, damage])
+	#print("%s has taken %s damage" % [self, damage])
 	if health <= 0:
 		died.emit()
 		queue_free()

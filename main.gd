@@ -17,7 +17,6 @@ func enemy_dead():
 	experience_bar.value = exp
 	if exp >= level_up_exp:
 		level_up()
-		
 func level_up():
 	print("level up")
 	if level == 10:

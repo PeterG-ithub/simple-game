@@ -10,7 +10,7 @@ var player_damage = 0.0
 func _ready():
 	player_damage = player.damage_stat
 	damage += player_damage
-	print(damage)
+	#print(damage)
 	
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)
