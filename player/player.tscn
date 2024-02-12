@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_lb16k"]
 [ext_resource type="Texture2D" uid="uid://c257tfcoqpysc" path="res://ui/hp_under.png" id="2_2m1ws"]
-[ext_resource type="Texture2D" uid="uid://cxed56761jiyr" path="res://ui/hp_over.png" id="3_kemt4"]
+[ext_resource type="Texture2D" uid="uid://cxed56761jiyr" path="res://ui/hp_progress.png" id="3_afrku"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ppq2d"]
 radius = 7.07107
@@ -32,4 +32,4 @@ offset_right = 11.0
 offset_bottom = -29.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_2m1ws")
-texture_progress = ExtResource("3_kemt4")
+texture_progress = ExtResource("3_afrku")

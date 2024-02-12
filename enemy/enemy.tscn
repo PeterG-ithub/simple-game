@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_byuei"]
 [ext_resource type="Texture2D" uid="uid://c257tfcoqpysc" path="res://ui/hp_under.png" id="2_llp1j"]
-[ext_resource type="Texture2D" uid="uid://cxed56761jiyr" path="res://ui/hp_over.png" id="3_hlo3r"]
+[ext_resource type="Texture2D" uid="uid://cxed56761jiyr" path="res://ui/hp_progress.png" id="3_d11n8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d03"]
 size = Vector2(18, 16)
@@ -13,7 +13,7 @@ height = 20.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("1_byuei")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -33,7 +33,7 @@ offset_right = 11.0
 offset_bottom = -19.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_llp1j")
-texture_progress = ExtResource("3_hlo3r")
+texture_progress = ExtResource("3_d11n8")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2

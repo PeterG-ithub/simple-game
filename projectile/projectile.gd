@@ -5,7 +5,7 @@ var range = 0
 
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)
-	position += delta * direction * 100
+	position += delta * direction * 250
 	range += 100 * delta
 	if range > MAX_RANGE:
 		queue_free()

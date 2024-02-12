@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://projectile/projectile.gd" id="1_papxc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdis4"]
-size = Vector2(27.7256, 5.6081)
+size = Vector2(28, 6)
 
 [node name="Projectile" type="Area2D"]
 top_level = true

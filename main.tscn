@@ -1,15 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgehj47wfopjx"]
+[gd_scene load_steps=8 format=3 uid="uid://cgehj47wfopjx"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_0ervo"]
 [ext_resource type="PackedScene" uid="uid://5j4xjqr8i3se" path="res://level/level.tscn" id="1_eum1e"]
 [ext_resource type="PackedScene" uid="uid://dno4xrefkloon" path="res://player/player.tscn" id="2_5mmrx"]
-[ext_resource type="PackedScene" uid="uid://24ttjwqaueoc" path="res://enemy/enemy.tscn" id="2_v0rym"]
+[ext_resource type="Texture2D" uid="uid://vntmw7hdaoeg" path="res://ui/exp_under.png" id="4_xdj0i"]
+[ext_resource type="Texture2D" uid="uid://bc677t4yhin7h" path="res://ui/exp_progress.png" id="5_jah24"]
+[ext_resource type="Script" path="res://enemy/enemy_spawner.gd" id="6_1nd8f"]
+
+[sub_resource type="Curve2D" id="Curve2D_d8ylm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1443, 45, 0, 0, 0, 0, 1454, 884, 0, 0, 0, 0, -126, 889, 0, 0, 0, 0, -144, -47, 0, 0, 0, 0, 1451, -52, 0, 0, 0, 0, 1443, 45)
+}
+point_count = 6
 
 [node name="Main" type="Node"]
+script = ExtResource("1_0ervo")
 
 [node name="Level" parent="." instance=ExtResource("1_eum1e")]
 
-[node name="Enemy" parent="." instance=ExtResource("2_v0rym")]
-position = Vector2(393, 146)
-
 [node name="Player" parent="." instance=ExtResource("2_5mmrx")]
 position = Vector2(217, 143)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ExperienceBar" type="TextureProgressBar" parent="UI"]
+offset_left = 7.0
+offset_top = 617.0
+offset_right = 1145.0
+offset_bottom = 641.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_xdj0i")
+texture_progress = ExtResource("5_jah24")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("6_1nd8f")
+
+[node name="Path2D" type="Path2D" parent="EnemySpawner"]
+curve = SubResource("Curve2D_d8ylm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner/Path2D"]
+position = Vector2(1443, 45)
+rotation = 1.55769
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+autostart = true
+
+[connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
