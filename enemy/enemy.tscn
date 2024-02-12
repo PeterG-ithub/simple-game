@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://24ttjwqaueoc"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_byuei"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3tnvd"]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_byuei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -18.0
+offset_right = 10.0
+color = Color(0.0745098, 0.282353, 0.372549, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3tnvd")

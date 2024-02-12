@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://jcjt56cx6c4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83oyd"]
+size = Vector2(26, 6)
+
+[node name="Projectile" type="Area2D"]
+top_level = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+top_level = true
+offset_top = -3.0
+offset_right = 26.0
+offset_bottom = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+top_level = true
+position = Vector2(13, 0)
+shape = SubResource("RectangleShape2D_83oyd")
