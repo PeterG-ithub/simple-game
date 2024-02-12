@@ -9,7 +9,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_d8ylm"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1443, 45, 0, 0, 0, 0, 1454, 884, 0, 0, 0, 0, -126, 889, 0, 0, 0, 0, -144, -47, 0, 0, 0, 0, 1451, -52, 0, 0, 0, 0, 1443, 45)
+"points": PackedVector2Array(0, 0, 0, 0, 1311, 26, 0, 0, 0, 0, 1317, 1138, 0, 0, 0, 0, 35, 1138, 0, 0, 0, 0, 36, -95, 0, 0, 0, 0, 1315, -97, 0, 0, 0, 0, 1313, 0)
 }
 point_count = 6
 
@@ -46,8 +46,8 @@ script = ExtResource("6_1nd8f")
 curve = SubResource("Curve2D_d8ylm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner/Path2D"]
-position = Vector2(1443, 45)
-rotation = 1.55769
+position = Vector2(1311, 26)
+rotation = 1.5654
 
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 autostart = true

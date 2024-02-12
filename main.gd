@@ -20,6 +20,8 @@ func enemy_dead():
 		
 func level_up():
 	print("level up")
+	if level == 10:
+		winner()
 	level += 1
 	level_up_exp = level_up_exp * 1.5
 	exp = 0.0
@@ -27,3 +29,6 @@ func level_up():
 	experience_bar.value = exp
 	level_label.text = "Lv.%s" % level
 	player.damage_stat += 50
+
+func winner():
+	pass
