@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_byuei"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3tnvd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d03"]
+size = Vector2(18, 16)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -16,4 +17,5 @@ offset_right = 10.0
 color = Color(0.0745098, 0.282353, 0.372549, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_3tnvd")
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_h4d03")

@@ -21,4 +21,4 @@ shape = SubResource("CircleShape2D_ppq2d")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ShootingPoint" type="Marker2D" parent="."]
-position = Vector2(7, -18)
+position = Vector2(0, -18)
