@@ -19,9 +19,11 @@ script = ExtResource("1_0ervo")
 [node name="Level" parent="." instance=ExtResource("1_eum1e")]
 
 [node name="Player" parent="." instance=ExtResource("2_5mmrx")]
-position = Vector2(217, 143)
+position = Vector2(764, 302)
 
 [node name="UI" type="CanvasLayer" parent="."]
+scale = Vector2(0.555, 0.555)
+transform = Transform2D(0.555, 0, 0, 0.555, 0, 0)
 
 [node name="ExperienceBar" type="TextureProgressBar" parent="UI"]
 offset_left = 7.0
