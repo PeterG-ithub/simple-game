@@ -4,6 +4,7 @@ const PROJECTILE = preload("res://projectile/projectile.tscn")
 const MAX_HEALTH = 100.0
 
 var health = 0.0
+var damage_stat = 10.0
 
 @onready var shooting_point = $ShootingPoint
 @onready var health_bar = $HealthBar
