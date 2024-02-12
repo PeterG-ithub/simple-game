@@ -3,12 +3,10 @@
 [ext_resource type="Script" path="res://projectile/projectile.gd" id="1_papxc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdis4"]
-size = Vector2(27.7256, 5.6081)
+size = Vector2(28, 6)
 
 [node name="Projectile" type="Area2D"]
 top_level = true
-collision_layer = 4
-collision_mask = 2
 script = ExtResource("1_papxc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -20,5 +18,3 @@ color = Color(1, 0.270588, 1, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14, 0)
 shape = SubResource("RectangleShape2D_kdis4")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
