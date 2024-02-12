@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://24ttjwqaueoc"]
+[gd_scene load_steps=5 format=3 uid="uid://24ttjwqaueoc"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_byuei"]
+[ext_resource type="Texture2D" uid="uid://c257tfcoqpysc" path="res://ui/hp_under.png" id="2_llp1j"]
+[ext_resource type="Texture2D" uid="uid://cxed56761jiyr" path="res://ui/hp_over.png" id="3_hlo3r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d03"]
 size = Vector2(18, 16)
@@ -19,3 +21,12 @@ color = Color(0.0745098, 0.282353, 0.372549, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_h4d03")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = -11.0
+offset_top = -23.0
+offset_right = 11.0
+offset_bottom = -19.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_llp1j")
+texture_progress = ExtResource("3_hlo3r")
