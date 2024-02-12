@@ -3,8 +3,10 @@ extends Node
 var exp = 0.0
 var level_up_exp = 100.0
 var level = 1
+
 @onready var level_label = $UI/ExperienceBar/LevelLabel
 @onready var experience_bar = $UI/ExperienceBar
+@onready var player = $Player
 
 func _ready():
 	experience_bar.max_value = level_up_exp
@@ -24,4 +26,4 @@ func level_up():
 	experience_bar.max_value = level_up_exp
 	experience_bar.value = exp
 	level_label.text = "Lv.%s" % level
-	
+	player.damage_stat += 50
