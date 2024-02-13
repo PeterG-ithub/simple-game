@@ -12,5 +12,3 @@ func _ready():
 	health = PLAYER_DATA.health
 	speed = PLAYER_DATA.speed
 	damage = PLAYER_DATA.damage
-	PLAYER_DATA.damage = 100
-
