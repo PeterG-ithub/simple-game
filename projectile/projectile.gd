@@ -5,10 +5,10 @@ var range = 0
 var damage = 100.0
 var player_damage = 0.0
 
-@onready var player = $"../.."
+@onready var player_variables = get_node("/root/PlayerVariable")
 
 func _ready():
-	player_damage = player.damage_stat
+	player_damage = player_variables.damage
 	damage += player_damage
 	#print(damage)
 	

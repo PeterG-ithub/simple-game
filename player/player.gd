@@ -3,19 +3,15 @@ extends CharacterBody2D
 signal dead
 
 const PROJECTILE = preload("res://projectile/projectile.tscn")
-const MAX_HEALTH = 100.0
 
-var health = 0.0
-var damage_stat = 10.0
-
+@onready var player_variables = get_node("/root/PlayerVariable")
 @onready var shooting_point = $ShootingPoint
 @onready var health_bar = $HealthBar
 @onready var player_shoot_audio = $PlayerShootAudio
 @onready var damage_taken_audio = $DamageTakenAudio
 
 func _ready():
-	health = MAX_HEALTH
-	health_bar.value = health
+	health_bar.value = (player_variables.health / player_variables.max_health * 100)
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left","right","up","down")
@@ -35,11 +31,11 @@ func shoot():
 	player_shoot_audio.play()
 
 func take_damage(damage):
-	health -= damage
+	player_variables.health -= damage
 	damage_taken_audio.play()
-	health_bar.value = (health / MAX_HEALTH * 100)
+	health_bar.value = (player_variables.health / player_variables.max_health * 100)
 	#print("%s has taken %s damage" % [self, damage])
-	if health <= 0:
+	if player_variables.health <= 0:
 		dead.emit()
 
 

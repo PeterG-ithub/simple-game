@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3 uid="uid://bhnimrelmb485"]
+
+[ext_resource type="Script" path="res://player/player_data.gd" id="1_c7uac"]
+
+[resource]
+script = ExtResource("1_c7uac")
+max_health = 100.0
+health = 100.0
+speed = 300.0
+damage = 10.0
