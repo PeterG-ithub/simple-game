@@ -7,7 +7,7 @@ const SLOT = preload("res://inventory/slot.tscn")
 
 func initialize_inventory(inventory_data: InventoryData):
 	for index in inventory_data.slot_datas.size():
-		if not inventory_data.slot_datas: #If slot data empty
+		if not inventory_data.slot_datas[index]: #If slot data empty
 			var slot_data = SlotData.new() #create a new slot data
 			inventory_data.slot_datas[index] = slot_data #insert new slot data to inventory
 		var slot = SLOT.instantiate()	#Create slot ui
@@ -19,10 +19,9 @@ func initialize_inventory(inventory_data: InventoryData):
 func update_item_grid(inventory_data):
 	var slot = item_grid.get_children()
 	for index in inventory_data.slot_datas.size():
-		if  inventory_data.slot_datas[index]:
-			if  inventory_data.slot_datas[index].item_data:
-				slot[index].set_slot_data(inventory_data.slot_datas[index])
-			else:
-				slot[index].reset_texture()
+		if  inventory_data.slot_datas[index].item_data:
+			slot[index].set_slot_data(inventory_data.slot_datas[index])
+		else:
+			slot[index].reset_texture()
 
 
