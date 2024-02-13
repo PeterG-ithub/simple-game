@@ -12,7 +12,7 @@ func spawn_enemy():
 	enemy.died.connect(main.enemy_dead)
 	path_follow_2d.progress_ratio = randf()
 	enemy.global_position = path_follow_2d.global_position
-	main.add_child(enemy)
+	add_child(enemy)
 
 func _on_spawn_timer_timeout():
 	spawn_enemy()
