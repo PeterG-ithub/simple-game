@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-signal died
+signal died(enemy)
 
 const MAX_HEALTH = 1000.0
 
 var health
 
-@onready var player = $"../Player"
+@onready var player = $"../../Player"
 @onready var health_bar = $HealthBar
 @onready var attack_cooldown = $AttackCooldown
 @onready var hitbox = $Hitbox
@@ -27,7 +27,7 @@ func take_damage(damage):
 	health_bar.value = (health / MAX_HEALTH * 100)
 	#print("%s has taken %s damage" % [self, damage])
 	if health <= 0:
-		died.emit()
+		died.emit(self)
 		queue_free()
 
 

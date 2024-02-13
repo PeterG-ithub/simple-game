@@ -4,6 +4,8 @@ var exp = 0.0
 var level_up_exp = 100.0
 var level = 1
 
+const LOOT_DROP = preload("res://item/collectible/loot_drop.tscn")
+
 @onready var level_label = $UI/ExperienceBar/LevelLabel
 @onready var experience_bar = $UI/ExperienceBar
 @onready var player = $Player
@@ -11,17 +13,25 @@ var level = 1
 @onready var ui = $UI
 @onready var enemy_dead_audio = $EnemyDeadAudio
 @onready var player_dead_audio = $PlayerDeadAudio	
+@onready var collectible = $Collectible
 
 func _ready():
 	experience_bar.max_value = level_up_exp
 	player.dead.connect(lose)
 
-func enemy_dead():
+func enemy_dead(enemy):
 	enemy_dead_audio.play()
 	exp += 20.0
 	experience_bar.value = exp
+	drop_loot(enemy.global_position)
 	if exp >= level_up_exp:
 		level_up()
+
+func drop_loot(pos):
+	var loot_drop = LOOT_DROP.instantiate()
+	loot_drop.global_position = pos
+	collectible.add_child(loot_drop)
+	
 
 func level_up():
 	level += 1
@@ -45,3 +55,5 @@ func lose():
 	const LOSE = preload("res://ui/lose.tscn")
 	ui.add_child(LOSE.instantiate())
 	get_tree().paused = true
+
+
