@@ -3,14 +3,12 @@ extends Area2D
 const MAX_RANGE = 200
 var range = 0
 var damage = 100.0
-var player_damage = 0.0
 
 @onready var player_variables = get_node("/root/PlayerVariable")
 
 func _ready():
-	player_damage = player_variables.damage
-	damage += player_damage
-	#print(damage)
+	damage += player_variables.damage
+	print(damage)
 	
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)
