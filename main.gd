@@ -30,9 +30,8 @@ func enemy_dead(enemy):
 func drop_loot(pos):
 	var loot_drop = LOOT_DROP.instantiate()
 	loot_drop.global_position = pos
-	collectible.add_child(loot_drop)
+	collectible.call_deferred("add_child", loot_drop)
 	
-
 func level_up():
 	level += 1
 	if level == 10:
