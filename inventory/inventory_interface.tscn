@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmimb68fhorph"]
+[gd_scene load_steps=4 format=3 uid="uid://cmimb68fhorph"]
 
 [ext_resource type="Script" path="res://inventory/inventory_interface.gd" id="1_81rf1"]
 [ext_resource type="PackedScene" uid="uid://cl38tlgx2kge0" path="res://inventory/inventory.tscn" id="1_wls28"]
-[ext_resource type="Resource" uid="uid://c872l4a8rqm4w" path="res://inventory/player_inv.tres" id="2_k4qsb"]
 [ext_resource type="PackedScene" uid="uid://bpeda1vwd8ttu" path="res://inventory/slot.tscn" id="4_h7lxy"]
 
 [node name="InventoryInterface" type="Control"]
@@ -13,13 +12,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_81rf1")
-inventory_data = ExtResource("2_k4qsb")
 
 [node name="Inventory" parent="." instance=ExtResource("1_wls28")]
 layout_mode = 0
 offset_left = 410.0
 offset_top = 66.0
-offset_right = 558.0
+offset_right = 567.0
 offset_bottom = 274.0
 
 [node name="EquipInventory" parent="." instance=ExtResource("1_wls28")]
@@ -27,7 +25,7 @@ layout_mode = 0
 offset_left = 138.0
 offset_top = 66.0
 offset_right = 286.0
-offset_bottom = 188.0
+offset_bottom = 144.0
 
 [node name="GrabbedSlot" parent="." instance=ExtResource("4_h7lxy")]
 self_modulate = Color(1, 1, 1, 0)
