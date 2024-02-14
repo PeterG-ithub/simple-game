@@ -10,20 +10,19 @@ var speed: float
 var damage: float 
 var player_inv_data: InventoryData
 var equip_inv_data: InventoryData
-
-var _damage_placeholder: float
+var damage_stat: float
  
 func _ready():
 	max_health = PLAYER_DATA.max_health
 	health = PLAYER_DATA.health
 	speed = PLAYER_DATA.speed
 	damage = PLAYER_DATA.damage
-	_damage_placeholder = damage
+	damage_stat = damage
 	player_inv_data = PLAYER_INV
 	equip_inv_data = EQUIP_INV
 
 func update_damage():
-	damage = _damage_placeholder + calculate_total_equip_damage()
+	damage = damage_stat + calculate_total_equip_damage()
 	print(damage)
 
 func calculate_total_equip_damage():
