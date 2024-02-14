@@ -22,3 +22,11 @@ func drop_item_data(grabbed_item_data, index) -> ItemData:
 	slot_datas[index].item_data = grabbed_item_data
 	inventory_updated.emit(self)
 	return item_data
+
+func pickup_item_data(item_data):
+	for index in slot_datas.size():
+		if slot_datas[index].item_data == null:
+			print(item_data.texture)
+			slot_datas[index].item_data = item_data
+			inventory_updated.emit(self)
+			break

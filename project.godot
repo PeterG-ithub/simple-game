@@ -67,6 +67,7 @@ inventory={
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="projectile"
 2d_physics/layer_4="boundary"
+2d_physics/layer_5="collectible"
 
 [rendering]
 
