@@ -49,7 +49,7 @@ func level_up():
 	experience_bar.max_value = level_up_exp
 	experience_bar.value = exp
 	level_label.text = "Lv.%s" % level
-	player_variables.damage += 65
+	player_variables.damage_stat += 65
 
 func winner():
 	var win_scene = preload("res://ui/winner.tscn")
