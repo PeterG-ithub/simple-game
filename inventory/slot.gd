@@ -6,9 +6,6 @@ signal slot_clicked(index: int, button: int)
 
 @onready var texture_rect = $MarginContainer/TextureRect
 
-func _physics_process(delta):
-	pass
-
 func set_slot_data(slot_data: SlotData):
 	texture_rect.texture = slot_data.item_data.texture
 
