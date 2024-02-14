@@ -22,6 +22,10 @@ func _ready():
 	inventory_interface.set_inventory_data(player_variables.player_inv_data)
 	inventory_interface.set_equip_inventory_data(player_variables.equip_inv_data)
 
+func _unhandled_input(event):
+	if event.is_action_pressed("inventory"):
+		toggle_inventory_interface()
+
 func enemy_dead(enemy):
 	enemy_dead_audio.play()
 	exp += 20.0
@@ -58,4 +62,5 @@ func lose():
 	ui.add_child(LOSE.instantiate())
 	get_tree().paused = true
 
-
+func toggle_inventory_interface():
+	inventory_interface.visible = not inventory_interface.visible

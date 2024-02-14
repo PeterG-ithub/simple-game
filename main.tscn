@@ -60,6 +60,7 @@ offset_bottom = 24.0
 text = "Lv.1"
 
 [node name="InventoryInterface" parent="UI" instance=ExtResource("7_jxxju")]
+visible = false
 
 [node name="EnemyDeadAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_4prt7")
