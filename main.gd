@@ -14,10 +14,13 @@ const LOOT_DROP = preload("res://item/collectible/loot_drop.tscn")
 @onready var enemy_dead_audio = $EnemyDeadAudio
 @onready var player_dead_audio = $PlayerDeadAudio	
 @onready var collectible = $Collectible
+@onready var inventory_interface = $UI/InventoryInterface
 
 func _ready():
 	experience_bar.max_value = level_up_exp
 	player.dead.connect(lose)
+	inventory_interface.set_inventory_data(player_variables.player_inv_data)
+	inventory_interface.set_equip_inventory_data(player_variables.equip_inv_data)
 
 func enemy_dead(enemy):
 	enemy_dead_audio.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgehj47wfopjx"]
+[gd_scene load_steps=11 format=3 uid="uid://cgehj47wfopjx"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0ervo"]
 [ext_resource type="PackedScene" uid="uid://5j4xjqr8i3se" path="res://level/level.tscn" id="1_eum1e"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bc677t4yhin7h" path="res://ui/exp_progress.png" id="5_jah24"]
 [ext_resource type="Script" path="res://enemy/enemy_spawner.gd" id="6_1nd8f"]
 [ext_resource type="AudioStream" uid="uid://27nky6juaafd" path="res://audio/enemy_death.wav" id="7_4prt7"]
+[ext_resource type="PackedScene" uid="uid://cmimb68fhorph" path="res://inventory/inventory_interface.tscn" id="7_jxxju"]
 [ext_resource type="AudioStream" uid="uid://c8tytw03i27pg" path="res://audio/player_death.wav" id="8_5pqjj"]
 
 [sub_resource type="Curve2D" id="Curve2D_d8ylm"]
@@ -57,6 +58,8 @@ offset_top = 1.0
 offset_right = 58.0
 offset_bottom = 24.0
 text = "Lv.1"
+
+[node name="InventoryInterface" parent="UI" instance=ExtResource("7_jxxju")]
 
 [node name="EnemyDeadAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_4prt7")
