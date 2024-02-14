@@ -39,11 +39,16 @@ func generate_item_data(loot_type):
 	match loot_type:
 		"Common":
 			item_data.texture = preload("res://item/assets/common_texture.png")
+			item_data.damage = 5.0
 		"Uncommon":
 			item_data.texture = preload("res://item/assets/uncommon_texture.png")
+			item_data.damage = 20.0
 		"Rare":
 			item_data.texture = preload("res://item/assets/rare_texture.png")
+			item_data.damage = 50.0
 		"Epic":
 			item_data.texture = preload("res://item/assets/epic_texture.png")
+			item_data.damage = 100.0
 		"Legendary":
 			item_data.texture = preload("res://item/assets/legendary_texture.png")
+			item_data.damage = 500.0
