@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://crjkmqwfk6l3y"]
+
+[ext_resource type="Script" path="res://item/item_data.gd" id="1_a3iyq"]
+[ext_resource type="Texture2D" uid="uid://cxed56761jiyr" path="res://ui/hp_progress.png" id="2_n3ek6"]
+
+[resource]
+script = ExtResource("1_a3iyq")
+name = "red box"
+item_type = ""
+texture = ExtResource("2_n3ek6")
+health = 0.0
+speed = 0.0
+damage = 0.0

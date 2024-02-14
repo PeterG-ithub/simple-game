@@ -8,7 +8,6 @@ var damage = 100.0
 
 func _ready():
 	damage += player_variables.damage
-	print(damage)
 	
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)

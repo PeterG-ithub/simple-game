@@ -38,6 +38,9 @@ func take_damage(damage):
 	if player_variables.health <= 0:
 		dead.emit()
 
-
 func _on_attack_speed_timeout():
 	shoot()
+
+func _on_pickup_range_area_entered(area):
+	player_variables.player_inv_data.pickup_item_data(area.item_data)
+	area.queue_free()
