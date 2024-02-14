@@ -19,3 +19,5 @@ func _ready():
 	player_inv_data = PLAYER_INV
 	equip_inv_data = EQUIP_INV
 
+func update_damage():
+	print("updated damage")
