@@ -6,6 +6,7 @@ const SLOT = preload("res://inventory/slot.tscn")
 @onready var item_grid = $MarginContainer/ItemGrid
 
 func initialize_inventory(inventory_data: InventoryData):
+	inventory_data.inventory_updated.connect(update_item_grid)
 	for index in inventory_data.slot_datas.size():
 		if not inventory_data.slot_datas[index]: #If slot data empty
 			var slot_data = SlotData.new() #create a new slot data
