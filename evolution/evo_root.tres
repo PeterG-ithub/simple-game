@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="EvolutionNode" load_steps=2 format=3 uid="uid://d23fejuscblt6"]
+[gd_resource type="Resource" script_class="EvolutionNode" load_steps=3 format=3 uid="uid://d23fejuscblt6"]
 
+[ext_resource type="Resource" uid="uid://dqqpwxiijwbx" path="res://evolution/first_evo.tres" id="1_7hgts"]
 [ext_resource type="Script" path="res://evolution/evolution_node.gd" id="1_52w8t"]
 
 [resource]
 script = ExtResource("1_52w8t")
 name = " Rectangle"
+next_evo = ExtResource("1_7hgts")
 evo_req = {}
