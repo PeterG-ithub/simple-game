@@ -5,7 +5,7 @@ const LOOT_DROP = preload("res://item/collectible/loot_drop.tscn")
 @onready var level_label = $UI/ExperienceBar/LevelLabel
 @onready var experience_bar = $UI/ExperienceBar
 @onready var player = $Player
-@onready var player_variables = get_node("/root/PlayerVariable")
+@onready var player_variables: PlayerVariable = get_node("/root/PlayerVariable")
 @onready var ui = $UI
 @onready var enemy_dead_audio = $EnemyDeadAudio
 @onready var player_dead_audio = $PlayerDeadAudio	
@@ -24,11 +24,10 @@ func _unhandled_input(event):
 
 func enemy_dead(enemy):
 	enemy_dead_audio.play()
-	exp += 20.0
-	experience_bar.value = exp
+	var enemy_exp = 20.0
+	player_variables.increase_exp(enemy_exp)
+	experience_bar.update_experience_bar()
 	drop_loot(enemy.global_position)
-	if exp >= level_up_exp:
-		level_up()
 
 func drop_loot(pos):
 	var loot_drop = LOOT_DROP.instantiate()
