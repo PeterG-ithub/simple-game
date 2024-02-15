@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="EvolutionNode" load_steps=2 format=3 uid="uid://b0wld7kr5fi2j"]
+[gd_resource type="Resource" script_class="EvolutionNode" load_steps=3 format=3 uid="uid://b0wld7kr5fi2j"]
 
 [ext_resource type="Script" path="res://evolution/evolution_node.gd" id="1_5kgpq"]
+[ext_resource type="Texture2D" uid="uid://dbmd02pmyafpw" path="res://evolution/assets/second_evo.png" id="2_k3x3u"]
 
 [resource]
 script = ExtResource("1_5kgpq")
 name = " Circle"
+texture = ExtResource("2_k3x3u")
 evo_req = {
 "level": 10
 }
