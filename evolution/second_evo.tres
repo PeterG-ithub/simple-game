@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EvolutionNode" load_steps=2 format=3 uid="uid://b0wld7kr5fi2j"]
+
+[ext_resource type="Script" path="res://evolution/evolution_node.gd" id="1_5kgpq"]
+
+[resource]
+script = ExtResource("1_5kgpq")
+name = " Circle"
+evo_req = {
+"level": 10
+}

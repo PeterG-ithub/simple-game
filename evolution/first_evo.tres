@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EvolutionNode" load_steps=3 format=3 uid="uid://dqqpwxiijwbx"]
+
+[ext_resource type="Script" path="res://evolution/evolution_node.gd" id="1_io5v2"]
+[ext_resource type="Resource" uid="uid://b0wld7kr5fi2j" path="res://evolution/second_evo.tres" id="1_ke02t"]
+
+[resource]
+script = ExtResource("1_io5v2")
+name = "Square"
+next_evo = ExtResource("1_ke02t")
+evo_req = {
+"level": 5
+}
