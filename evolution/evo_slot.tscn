@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://diu77yu6msmcb"]
+[gd_scene load_steps=3 format=3 uid="uid://diu77yu6msmcb"]
 
 [ext_resource type="Texture2D" uid="uid://bjrvepd3ja4vy" path="res://icon.svg" id="1_in4am"]
+[ext_resource type="Script" path="res://evolution/evo_slot.gd" id="1_odthf"]
 
 [node name="EvoSlot" type="PanelContainer"]
 custom_minimum_size = Vector2(32, 32)
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_odthf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
