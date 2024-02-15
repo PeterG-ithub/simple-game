@@ -1,5 +1,7 @@
 extends Node
 
+signal leveled_up
+
 const PLAYER_DATA = preload("res://player/new_player.tres")
 const PLAYER_INV = preload("res://inventory/player_inv.tres")
 const EQUIP_INV = preload("res://inventory/equip_inv.tres")
@@ -55,6 +57,7 @@ func can_level_up() -> bool:
 
 func level_up():
 	level += 1
+	leveled_up.emit()
 
 func check_and_level_up():
 	if can_level_up():
