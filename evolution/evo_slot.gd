@@ -1,7 +1,5 @@
 extends PanelContainer
 
-@export var evo_node: EvolutionNode
-
 @onready var texture_rect = $MarginContainer/TextureRect
 
 func set_slot_texture(evo_node: EvolutionNode):
