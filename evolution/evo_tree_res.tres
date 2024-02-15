@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EvolutionTree" load_steps=3 format=3 uid="uid://x457titg3afm"]
+
+[ext_resource type="Script" path="res://evolution/evolution_tree.gd" id="1_glofx"]
+[ext_resource type="Resource" uid="uid://d23fejuscblt6" path="res://evolution/evo_root.tres" id="2_eholm"]
+
+[resource]
+script = ExtResource("1_glofx")
+starting_node = ExtResource("2_eholm")
