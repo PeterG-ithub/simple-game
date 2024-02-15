@@ -1,9 +1,5 @@
 extends Node
 
-var exp = 0.0
-var level_up_exp = 100.0
-var level = 1
-
 const LOOT_DROP = preload("res://item/collectible/loot_drop.tscn")
 
 @onready var level_label = $UI/ExperienceBar/LevelLabel

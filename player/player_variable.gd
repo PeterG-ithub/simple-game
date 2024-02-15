@@ -7,11 +7,15 @@ const EQUIP_INV = preload("res://inventory/equip_inv.tres")
 var max_health: float
 var health: float 
 var speed: float 
-var damage: float 
+var damage: float
+var damage_stat: float
 var player_inv_data: InventoryData
 var equip_inv_data: InventoryData
-var damage_stat: float
- 
+
+var experience: float
+var level_up_exp: float
+var level: int
+
 func _ready():
 	max_health = PLAYER_DATA.max_health
 	health = PLAYER_DATA.health
@@ -20,6 +24,10 @@ func _ready():
 	damage_stat = damage
 	player_inv_data = PLAYER_INV
 	equip_inv_data = EQUIP_INV
+	
+	experience = 0.0
+	level_up_exp = 100.0
+	level = 1
 
 func update_damage():
 	damage = damage_stat + calculate_total_equip_damage()
@@ -31,3 +39,4 @@ func calculate_total_equip_damage():
 		if slot_data.item_data:
 			temp_damage += slot_data.item_data.damage
 	return temp_damage
+
