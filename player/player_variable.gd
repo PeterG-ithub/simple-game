@@ -42,9 +42,14 @@ func calculate_total_equip_damage():
 
 func increase_exp(exp):
 	experience += exp
+	check_and_level_up()
 
 func can_level_up() -> bool:
 	return experience >= level_up_exp
 
 func level_up():
 	level += 1
+
+func check_and_level_up():
+	if can_level_up():
+		level_up()
