@@ -30,35 +30,45 @@ layout_mode = 2
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/NinePatchRect"]
+[node name="EvoLines" type="Control" parent="MarginContainer/PanelContainer/NinePatchRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/NinePatchRect/EvoLines"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 160.0
 offset_right = 122.0
 offset_bottom = 164.0
 
-[node name="ColorRect2" type="ColorRect" parent="MarginContainer/PanelContainer/NinePatchRect"]
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/PanelContainer/NinePatchRect/EvoLines"]
 layout_mode = 0
 offset_left = 122.0
 offset_top = 160.0
 offset_right = 203.0
 offset_bottom = 164.0
 
-[node name="EvoSlot" parent="MarginContainer/PanelContainer/NinePatchRect" instance=ExtResource("1_eh75v")]
+[node name="EvoSlots" type="Control" parent="MarginContainer/PanelContainer/NinePatchRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EvoSlot" parent="MarginContainer/PanelContainer/NinePatchRect/EvoSlots" instance=ExtResource("1_eh75v")]
 layout_mode = 0
-offset_left = 22.0
+offset_left = 24.0
 offset_top = 142.0
-offset_right = 62.0
+offset_right = 64.0
 offset_bottom = 182.0
 
-[node name="EvoSlot2" parent="MarginContainer/PanelContainer/NinePatchRect" instance=ExtResource("1_eh75v")]
+[node name="EvoSlot2" parent="MarginContainer/PanelContainer/NinePatchRect/EvoSlots" instance=ExtResource("1_eh75v")]
 layout_mode = 0
 offset_left = 103.0
 offset_top = 142.0
 offset_right = 143.0
 offset_bottom = 182.0
 
-[node name="EvoSlot3" parent="MarginContainer/PanelContainer/NinePatchRect" instance=ExtResource("1_eh75v")]
+[node name="EvoSlot3" parent="MarginContainer/PanelContainer/NinePatchRect/EvoSlots" instance=ExtResource("1_eh75v")]
 layout_mode = 0
 offset_left = 184.0
 offset_top = 142.0
