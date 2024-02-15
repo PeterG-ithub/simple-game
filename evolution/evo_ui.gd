@@ -12,5 +12,9 @@ func initialize_interface(evolution_tree: EvolutionTree):
 	var slots = evo_slots.get_children()
 	for index in range(3): 
 		slots[index].set_slot_texture(current_node)
+		slots[index].slot_clicked.connect(on_slot_clicked)
 		if current_node.next_evo:
 			current_node = current_node.next_evo
+
+func on_slot_clicked(index, button):
+	print("%s %s" % [index, button])
