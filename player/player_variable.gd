@@ -44,6 +44,9 @@ func increase_exp(exp):
 	experience += exp
 	check_and_level_up()
 
+func reset_exp():
+	experience = 0.0
+
 func can_level_up() -> bool:
 	return experience >= level_up_exp
 
