@@ -40,3 +40,5 @@ func calculate_total_equip_damage():
 			temp_damage += slot_data.item_data.damage
 	return temp_damage
 
+func increase_exp(exp):
+	experience += exp
