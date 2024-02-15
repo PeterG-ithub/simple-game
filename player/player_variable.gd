@@ -59,3 +59,5 @@ func level_up():
 func check_and_level_up():
 	if can_level_up():
 		level_up()
+		increase_level_up_exp()
+		reset_exp()
