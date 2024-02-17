@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://dki2xeclb2l4s"]
+
+[ext_resource type="Script" path="res://evolution/evo_ui.gd" id="1_4k8ji"]
+[ext_resource type="PackedScene" uid="uid://diu77yu6msmcb" path="res://evolution/evo_slot.tscn" id="1_eh75v"]
+[ext_resource type="Resource" uid="uid://x457titg3afm" path="res://evolution/evo_tree_res.tres" id="2_1o08c"]
+
+[node name="EvoUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4k8ji")
+evo_tree = ExtResource("2_1o08c")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="EvoLines" type="Control" parent="MarginContainer/PanelContainer/NinePatchRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/NinePatchRect/EvoLines"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 160.0
+offset_right = 122.0
+offset_bottom = 164.0
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/PanelContainer/NinePatchRect/EvoLines"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 160.0
+offset_right = 203.0
+offset_bottom = 164.0
+
+[node name="EvoSlots" type="Control" parent="MarginContainer/PanelContainer/NinePatchRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EvoSlot" parent="MarginContainer/PanelContainer/NinePatchRect/EvoSlots" instance=ExtResource("1_eh75v")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 142.0
+offset_right = 64.0
+offset_bottom = 182.0
+
+[node name="EvoSlot2" parent="MarginContainer/PanelContainer/NinePatchRect/EvoSlots" instance=ExtResource("1_eh75v")]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 142.0
+offset_right = 143.0
+offset_bottom = 182.0
+
+[node name="EvoSlot3" parent="MarginContainer/PanelContainer/NinePatchRect/EvoSlots" instance=ExtResource("1_eh75v")]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 142.0
+offset_right = 224.0
+offset_bottom = 182.0
