@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="EvolutionNode" load_steps=3 format=3 uid="uid://d23fejuscblt6"]
+[gd_resource type="Resource" script_class="EvolutionNode" load_steps=4 format=3 uid="uid://d23fejuscblt6"]
 
 [ext_resource type="Resource" uid="uid://dqqpwxiijwbx" path="res://evolution/first_evo.tres" id="1_7hgts"]
 [ext_resource type="Script" path="res://evolution/evolution_node.gd" id="1_52w8t"]
+[ext_resource type="Texture2D" uid="uid://cijyg502kayyx" path="res://evolution/assets/base.png" id="3_i75hu"]
 
 [resource]
 script = ExtResource("1_52w8t")
-name = " Rectangle"
+name = "Rectangle"
+texture = ExtResource("3_i75hu")
 next_evo = ExtResource("1_7hgts")
 evo_req = {}
