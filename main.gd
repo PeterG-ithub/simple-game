@@ -1,15 +1,11 @@
 extends Node
 
-var exp = 0.0
-var level_up_exp = 100.0
-var level = 1
-
 const LOOT_DROP = preload("res://item/collectible/loot_drop.tscn")
 
 @onready var level_label = $UI/ExperienceBar/LevelLabel
 @onready var experience_bar = $UI/ExperienceBar
 @onready var player = $Player
-@onready var player_variables = get_node("/root/PlayerVariable")
+@onready var player_variables: PlayerVariable = get_node("/root/PlayerVariable")
 @onready var ui = $UI
 @onready var enemy_dead_audio = $EnemyDeadAudio
 @onready var player_dead_audio = $PlayerDeadAudio	
@@ -17,7 +13,6 @@ const LOOT_DROP = preload("res://item/collectible/loot_drop.tscn")
 @onready var inventory_interface = $UI/InventoryInterface
 
 func _ready():
-	experience_bar.max_value = level_up_exp
 	player.dead.connect(lose)
 	inventory_interface.set_inventory_data(player_variables.player_inv_data)
 	inventory_interface.set_equip_inventory_data(player_variables.equip_inv_data)
@@ -28,28 +23,15 @@ func _unhandled_input(event):
 
 func enemy_dead(enemy):
 	enemy_dead_audio.play()
-	exp += 20.0
-	experience_bar.value = exp
+	var enemy_exp = 20.0
+	player_variables.increase_exp(enemy_exp)
+	experience_bar.update_experience_bar()
 	drop_loot(enemy.global_position)
-	if exp >= level_up_exp:
-		level_up()
 
 func drop_loot(pos):
 	var loot_drop = LOOT_DROP.instantiate()
 	loot_drop.global_position = pos
 	collectible.call_deferred("add_child", loot_drop)
-	
-func level_up():
-	level += 1
-	if level == 10:
-		winner()
-	
-	level_up_exp = level_up_exp * 1.5
-	exp = 0.0
-	experience_bar.max_value = level_up_exp
-	experience_bar.value = exp
-	level_label.text = "Lv.%s" % level
-	player_variables.damage_stat += 65
 
 func winner():
 	var win_scene = preload("res://ui/winner.tscn")
