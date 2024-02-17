@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_52w8t")
-name = " Rectangle"
+name = "Rectangle"
 texture = ExtResource("3_i75hu")
 next_evo = ExtResource("1_7hgts")
 evo_req = {}
