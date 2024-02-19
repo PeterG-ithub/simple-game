@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dno4xrefkloon"]
+[gd_scene load_steps=9 format=3 uid="uid://dno4xrefkloon"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_lb16k"]
 [ext_resource type="Texture2D" uid="uid://c257tfcoqpysc" path="res://ui/hp_under.png" id="2_2m1ws"]
+[ext_resource type="Texture2D" uid="uid://cijyg502kayyx" path="res://evolution/assets/base.png" id="2_r54a3"]
 [ext_resource type="Texture2D" uid="uid://cxed56761jiyr" path="res://ui/hp_progress.png" id="3_afrku"]
 [ext_resource type="AudioStream" uid="uid://l8uqibretr3i" path="res://audio/projectile_sfx.wav" id="4_xtlai"]
 [ext_resource type="AudioStream" uid="uid://bjpr2gnrmdepx" path="res://audio/damage.wav" id="5_ou63e"]
@@ -16,11 +17,9 @@ radius = 19.0
 collision_mask = 24
 script = ExtResource("1_lb16k")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -7.0
-offset_top = -27.0
-offset_right = 7.0
-offset_bottom = 3.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+texture = ExtResource("2_r54a3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ppq2d")
@@ -36,9 +35,9 @@ position = Vector2(0, -18)
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 offset_left = -11.0
-offset_top = -33.0
+offset_top = -36.0
 offset_right = 11.0
-offset_bottom = -29.0
+offset_bottom = -32.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_2m1ws")
 texture_progress = ExtResource("3_afrku")
