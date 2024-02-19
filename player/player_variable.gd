@@ -66,3 +66,6 @@ func check_and_level_up():
 		level_up()
 		increase_level_up_exp()
 		reset_exp()
+
+func evolve(next_evolution: EvolutionNode):
+	current_evolution = next_evolution.name
