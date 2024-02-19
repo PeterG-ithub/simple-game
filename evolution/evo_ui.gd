@@ -14,6 +14,7 @@ func initialize_interface(evolution_tree: EvolutionTree):
 	var slots = evo_slots.get_children()
 	for index in range(3): 
 		slots[index].evolution_node = current_node
+		slots[index].evolution_node.can_evolve.connect(player_variables.evolve)
 		slots[index].initialize_slot()
 		slots[index].slot_clicked.connect(on_slot_clicked)
 		if current_node.next_evo:
