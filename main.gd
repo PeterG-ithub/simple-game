@@ -11,6 +11,7 @@ const LOOT_DROP = preload("res://item/collectible/loot_drop.tscn")
 @onready var player_dead_audio = $PlayerDeadAudio	
 @onready var collectible = $Collectible
 @onready var inventory_interface = $UI/InventoryInterface
+@onready var evo_ui = $UI/EvoUI
 
 func _ready():
 	player.dead.connect(lose)
@@ -20,6 +21,8 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_pressed("inventory"):
 		toggle_inventory_interface()
+	if event.is_action_pressed("evolution"):
+		toggle_evolution_interface()
 
 func enemy_dead(enemy):
 	enemy_dead_audio.play()
@@ -46,3 +49,6 @@ func lose():
 
 func toggle_inventory_interface():
 	inventory_interface.visible = not inventory_interface.visible
+
+func toggle_evolution_interface():
+	evo_ui.visible = not evo_ui.visible
