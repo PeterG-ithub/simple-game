@@ -1,6 +1,7 @@
 extends Node
 
 signal leveled_up
+signal evolved
 
 const PLAYER_DATA = preload("res://player/new_player.tres")
 const PLAYER_INV = preload("res://inventory/player_inv.tres")
@@ -19,6 +20,7 @@ var level_up_exp: float
 var level: int
 
 var current_evolution: String
+var texture: Texture
 
 func _ready():
 	max_health = PLAYER_DATA.max_health
@@ -69,3 +71,5 @@ func check_and_level_up():
 
 func evolve(next_evolution: EvolutionNode):
 	current_evolution = next_evolution.name
+	texture = next_evolution.texture
+	evolved.emit()
