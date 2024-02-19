@@ -4,14 +4,16 @@ signal dead
 
 const PROJECTILE = preload("res://projectile/projectile.tscn")
 
-@onready var player_variables = get_node("/root/PlayerVariable")
+@onready var player_variables: PlayerVariable = get_node("/root/PlayerVariable")
 @onready var shooting_point = $ShootingPoint
 @onready var health_bar = $HealthBar
 @onready var player_shoot_audio = $PlayerShootAudio
 @onready var damage_taken_audio = $DamageTakenAudio
+@onready var sprite_2d = $Sprite2D
 
 func _ready():
 	health_bar.value = (player_variables.health / player_variables.max_health * 100)
+	player_variables.evolved.connect(update_texture)
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left","right","up","down")
@@ -22,6 +24,8 @@ func _input(event):
 	if event.is_action_pressed("shoot"):
 		shoot()
 
+func update_texture():
+	sprite_2d.texture = player_variables.texture
 
 func shoot():
 	var projectile = PROJECTILE.instantiate()
