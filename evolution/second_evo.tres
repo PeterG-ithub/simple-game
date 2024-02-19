@@ -8,5 +8,6 @@ script = ExtResource("1_5kgpq")
 name = "Circle"
 texture = ExtResource("2_k3x3u")
 evo_req = {
-"level": 10
+"last_evo": "Square",
+"level": 2
 }

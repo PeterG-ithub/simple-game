@@ -10,5 +10,6 @@ name = "Square"
 texture = ExtResource("3_tyana")
 next_evo = ExtResource("1_ke02t")
 evo_req = {
-"level": 5
+"last_evo": "Rectangle",
+"level": 1
 }
