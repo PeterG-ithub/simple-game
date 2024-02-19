@@ -18,6 +18,8 @@ var experience: float
 var level_up_exp: float
 var level: int
 
+var current_evolution: String
+
 func _ready():
 	max_health = PLAYER_DATA.max_health
 	health = PLAYER_DATA.health
